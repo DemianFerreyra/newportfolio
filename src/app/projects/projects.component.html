@@ -1,6 +1,30 @@
 <p class="separator">PROYECTOS</p>
 
 
-<div *ngFor="let item of projects">
-    <p>{{item.name}}</p>
-</div>
+<ng-template [ngIf]="mobile === false"[ngIfElse]="mobileProjects">{{setPage(currentPage)}}
+  <div class="projects">
+    <div *ngFor="let item of projects" class="projectCard">
+      <img src={{item.img}} alt="ImgProyecto">
+      <div class="title">
+        <h1>{{item.name}}</h1>
+        <p>{{item.desc}}</p>
+      </div>
+    </div>
+  </div>
+<ul class="buttons">
+  <a *ngFor="let item of pages; let index = index;" (click)="setPage(index)">{{index + 1}}</a>
+</ul>
+</ng-template>
+
+
+<ng-template #mobileProjects>{{mobileArray(currentMobile)}}
+  <div *ngFor="let item of projects; let i = index" class="mobileProject">
+      <img src={{item.img}} alt="projectCard">
+      <div class="mobileTitle">
+        <h1>{{item.name}}</h1>
+        <p>{{item.desc}}</p>
+      </div>
+  </div>
+  <button (click)="mobileArray(currentMobile + 1)" class="mobileButton">Proximo proyecto</button>
+</ng-template>
+

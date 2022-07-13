@@ -46,3 +46,12 @@
 }
 
 
+
+/*--------------------------------PROYECTOS--------------------------------*/
+.projectZone{
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 1200px;
+}

@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import proyectos from "./allprojects"
 
 interface Project{
   name : String;
-  img?: File;
+  img?: String;
   desc: String;
 }
+
 
 @Component({
   selector: 'app-projects',
@@ -13,18 +14,65 @@ interface Project{
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+  mobile: Boolean = false;
   projects: Array<Project> = [];
-  constructor() { }
+  currentPage: any = 0;
+  currentMobile: any = 0;
+  pages: Array<any> = [];
+
+
+  @HostListener('window:resize', ['$event'])
+     onResize(event: any) {
+      if (window.matchMedia("(min-width: 600px)").matches) {
+        this.mobile = false;
+      }else{
+        this.mobile = true;
+      }
+   }
+  constructor() {}
 
   ngOnInit(): void {
-    proyectos.forEach((e:any) =>{
-      console.log('hola', e)
-      const res: Project = {
-        name: e.name,
-        desc: e.desc,
+    this.setArray();
+    this.pages = [...Array(Math.ceil(proyectos.length / 2))]
+  }
+
+
+  mobileArray(index:any){
+    if(index >= proyectos.length){
+      this.currentMobile = 0
+    }else{
+      this.currentMobile = index;
+    }
+    this.projects = []
+
+    proyectos.forEach((e:any, i) =>{
+      if(index === i){
+        const res: Project = {
+          name: e.name,
+          desc: e.desc,
+          img: e.img?e.img:"https://niixer.com/wp-content/uploads/2020/11/javascript.png"
+        }
+        this.projects.push(res)
       }
-      this.projects.push(res)
-      console.log(this.projects)
     })
+  }
+  setArray(){
+    this.projects = [];
+      proyectos.forEach((e:any, index) =>{
+        if(index >= 2 * this.currentPage && index < 2 * (this.currentPage + 1)){
+          const res: Project = {
+            name: e.name,
+            desc: e.desc,
+            img: e.img?e.img:"https://niixer.com/wp-content/uploads/2020/11/javascript.png"
+          }
+          this.projects.push(res)
+        }else{
+          return
+        }
+      })
+  }
+  setPage(page:Number){
+    this.currentPage = page;
+    this.setArray();
   }
 }

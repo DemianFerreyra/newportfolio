@@ -4,6 +4,7 @@ import proyectos from "./allprojects"
 
 interface Project{
   name : String;
+  link: String;
   img?: String;
   desc: String;
 }
@@ -51,6 +52,7 @@ export class ProjectsComponent implements OnInit {
       if(index === i){
         const res: Project = {
           name: e.name,
+          link: e.link,
           desc: e.desc,
           img: e.img?e.img:"https://niixer.com/wp-content/uploads/2020/11/javascript.png"
         }
@@ -64,6 +66,7 @@ export class ProjectsComponent implements OnInit {
         if(index >= 2 * this.currentPage && index < 2 * (this.currentPage + 1)){
           const res: Project = {
             name: e.name,
+            link: e.link,
             desc: e.desc,
             img: e.img?e.img:"https://niixer.com/wp-content/uploads/2020/11/javascript.png"
           }

@@ -6,7 +6,7 @@
     <div *ngFor="let item of projects" class="projectCard">
       <img src={{item.img}} alt="ImgProyecto">
       <div class="title">
-        <h1>{{item.name}}</h1>
+        <h1><a href={{item.link}} target="_blank">{{item.name}}</a></h1>
         <p>{{item.desc}}</p>
       </div>
     </div>
@@ -21,7 +21,7 @@
   <div *ngFor="let item of projects; let i = index" class="mobileProject">
       <img src={{item.img}} alt="projectCard">
       <div class="mobileTitle">
-        <h1>{{item.name}}</h1>
+        <h1><a href={{item.link}} target="_blank">{{item.name}}</a></h1>
         <p>{{item.desc}}</p>
       </div>
   </div>

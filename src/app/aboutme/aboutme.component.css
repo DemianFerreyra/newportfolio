@@ -1,0 +1,64 @@
+.technologies{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+.technologies *{
+    font-size: 60px;
+}
+.title{
+    font-size: 15px;
+    font-weight: 400;
+}
+.intro{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    width: 85%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+.num2{
+  margin-top: 0px;
+  margin-bottom: 130px;
+}
+.num1{
+    margin-top: 0px;
+    margin-bottom: 75px;
+}
+.contactInfo{
+    width: 85%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 70px;
+}
+.contact{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    font-size: 40px;
+    gap: 50px;
+}
+
+/*----------------------MOBILE VERSION--------------------------*/
+
+@media (max-width:767px) {
+    .intro{
+        font-size: 12px;
+    }
+    .technologies *{
+        font-size: 40px;
+    }
+    img{
+        height: 40px;
+    }
+    .title{
+        font-size: 11px;
+    }
+    .contact *{
+      font-size: 30px;
+      gap: 20px;
+    }
+}

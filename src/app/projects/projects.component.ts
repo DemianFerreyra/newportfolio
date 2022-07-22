@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import proyectos from "./allprojects"
 
 interface Project{
@@ -14,6 +15,7 @@ interface Project{
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+  faGitHub = faGithub;
   mobile: Boolean = false;
   projects: Array<Project> = [];
   currentPage: any = 0;
@@ -23,7 +25,7 @@ export class ProjectsComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
      onResize(event: any) {
-      if (window.matchMedia("(min-width: 600px)").matches) {
+      if (window.matchMedia("(min-width: 767px)").matches) {
         this.mobile = false;
       }else{
         this.mobile = true;

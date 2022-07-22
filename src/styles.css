@@ -17,3 +17,11 @@ body{
     text-align: center;
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.274);
 }
+
+/*----------------------MOBILE VERSION--------------------------*/
+
+@media (max-width:767px) {
+    .separator{
+      font-size: 15px;
+    }
+}

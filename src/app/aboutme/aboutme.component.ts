@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faAngular, faGithub, faInstagram, faJs, faLinkedin, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
+import { faAngular, faAws, faGithub, faInstagram, faJs, faLinkedin, faNodeJs, faReact, faVuejs } from '@fortawesome/free-brands-svg-icons';
 @Component({
   selector: 'app-aboutme',
   templateUrl: './aboutme.component.html',
@@ -9,6 +9,8 @@ export class AboutmeComponent implements OnInit {
   faJs = faJs;
   faNode = faNodeJs;
   faAngular = faAngular;
+  faVuejs = faVuejs;
+  faAWS = faAws;
   faReact = faReact;
   faGitHub = faGithub;
   faLinkedin = faLinkedin;

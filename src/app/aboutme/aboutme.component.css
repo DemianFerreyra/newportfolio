@@ -5,7 +5,7 @@
     align-items: center;
 }
 .technologies *{
-    font-size: 60px;
+    font-size: 58px;
 }
 .title{
     font-size: 15px;
@@ -49,10 +49,10 @@
         font-size: 12px;
     }
     .technologies *{
-        font-size: 40px;
+        font-size: 34px;
     }
     img{
-        height: 40px;
+        height: 30px;
     }
     .title{
         font-size: 11px;

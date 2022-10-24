@@ -16,7 +16,13 @@ const project3:Object = {
     desc: "Proyecto grupal soyHenry. Para este proyecto, realizamos una red social completa, con posibilidad de entrar como invitado, con una cuenta creada, o como admin, teniendo privilegios distintos segun como entrases. La misma cuenta con una pasarela de pago para poder comprar y vender obras (En el deploy solo utilizamos la version de sandbox), asi como en el apartado de admin, una seccion para ver las transacciones realizadas",
     img: "assets/images/PG1.png"
 }
+const project4:Object = {
+    name : "Riot Fan API",
+    link:"https://github.com/DemianFerreyra/riotfanapi",
+    desc: "Primer proyecto realizado en AWS, una API de personajes de RiotGames. Actualmente esta API solo dispone de personajes de Valorant, pero la idea es expandirla a personajes de League of Legends tambien. Cuenta con el back realizado en ExpressJS y el front en React + TypeScript",
+    img: "assets/images/ValoAgents1.jpg"
+}
 
 export default[
-    project1, project2, project3
+    project1, project2, project3, project4
 ]
